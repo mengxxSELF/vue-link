@@ -11,6 +11,12 @@ let home = new Router()
 
 // 获取已经保存过的配置文件的信息
 home.get('/list', async (ctx) => {
+  // 先判断一下本地是否存在  config.json 
+  let isEixst = fs.existsSync('config.json')
+  if (!isEixst) {
+    ctx.body = { code: 200, result: [] }
+    return
+  }
   const result = JSON.parse(fs.readFileSync('config.json', 'utf-8'))
   ctx.body = {
     code: 200,
