@@ -1,6 +1,30 @@
 
+### server 3000
 
-## 参考文章
+```js
+npm start
+```
+
+### 前端 8080
+
+进入 src
+
+```js
+npm start
+```
+
+
+### 技术框架
+
+* [vue](https://cn.vuejs.org/v2/guide/components-registration.html)
+
+* [koa](https://chenshenhai.github.io/koa2-note/note/request/post-use-middleware.html)
+
+* [axios](https://www.kancloud.cn/yunye/axios/234845)
+
+* [element](http://element-cn.eleme.io/#/zh-CN/component/table)
+
+### 参考文章
 
 * [shelljs](https://cloud.tencent.com/developer/article/1351852)
 
