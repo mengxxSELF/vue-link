@@ -91,6 +91,6 @@ app.use(cors());
 // 加载路由中间件
 app.use(home.routes()).use(home.allowedMethods())
 
-app.listen(3000, () => {
-  console.log('i am 3000')
+app.listen(9098, () => {
+  console.log('i am 9098')
 });
