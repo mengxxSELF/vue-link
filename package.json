@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "shipit production deploy"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,12 @@
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "koa2-cors": "^2.0.6",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "shipit-better-cnpm": "^0.0.4",
+    "shipit-pm": "^0.3.0"
   },
   "devDependencies": {
-    "koa-static": "^5.0.0"
+    "koa-static": "^5.0.0",
+    "shipit-better-deploy": "^0.0.6"
   }
 }

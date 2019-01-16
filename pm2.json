@@ -1,5 +1,5 @@
 {
-  "name": "eyes",
+  "name": "vue-link",
   "script": "/home/work/vue-link/current/index.js",
   "error_file": "/data/logs/pm2/vue-link/error.log",
   "out_file": "/data/logs/pm2/vue-link/out.log",
