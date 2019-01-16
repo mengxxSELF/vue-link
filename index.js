@@ -2,13 +2,13 @@ const shell = require('shelljs');//这里要下载shell插件
 const fs = require('fs')
 const path = require('path')
 const Koa = require('koa');
-const app = new Koa();
+const kkoa = new Koa();
 const Router = require('koa-router')
 const cors = require('koa2-cors');
 const bodyParser = require('koa-bodyparser')
 const static = require('koa-static')
 // 使用ctx.body解析中间件
-app.use(bodyParser())
+kkoa.use(bodyParser())
 let home = new Router()
 
 const configRoot = '/tmp/config.json'
@@ -16,7 +16,7 @@ const configRoot = '/tmp/config.json'
 // 静态资源目录对于相对入口文件index.js的路径
 const staticPath = './src/dist'
 
-app.use(static(
+kkoa.use(static(
   path.join(__dirname, staticPath)
 ))
 
@@ -86,11 +86,11 @@ home.post('/link', async (ctx) => {
   shell.exec('open -a Terminal run.sh')
   ctx.body = { code: 200, message: `已链接到 ${type ? 'mysql' : 'redis' } 地址为 ${server}` }
 })
-app.use(cors());
+kkoa.use(cors());
 
 // 加载路由中间件
-app.use(home.routes()).use(home.allowedMethods())
+kkoa.use(home.routes()).use(home.allowedMethods())
 
-app.listen(9098, () => {
+kkoa.listen(9098, () => {
   console.log('i am 9098')
 });
