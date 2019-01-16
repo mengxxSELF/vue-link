@@ -1,0 +1,17 @@
+{
+  "name": "eyes",
+  "script": "/home/work/vue-link/current/index.js",
+  "error_file": "/data/logs/pm2/vue-link/error.log",
+  "out_file": "/data/logs/pm2/vue-link/out.log",
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "instances": 0,
+  "merge_logs": true,
+  "exec_mode": "fork",
+  "node_args": "",
+  "ignore_watch": [
+    "node_modules"
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
