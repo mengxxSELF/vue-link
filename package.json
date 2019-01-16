@@ -17,11 +17,11 @@
     "koa-router": "^7.4.0",
     "koa2-cors": "^2.0.6",
     "shelljs": "^0.8.3",
-    "shipit-better-cnpm": "^0.0.4",
-    "shipit-pm": "^0.3.0"
+    "koa-static": "^5.0.0"
   },
   "devDependencies": {
-    "koa-static": "^5.0.0",
+    "shipit-better-cnpm": "^0.0.4",
+    "shipit-pm": "^0.3.0",
     "shipit-better-deploy": "^0.0.6"
   }
 }
