@@ -7,6 +7,7 @@ const Router = require('koa-router')
 const cors = require('koa2-cors');
 const bodyParser = require('koa-bodyparser')
 const static = require('koa-static')
+const send = require('koa-send');
 // 使用ctx.body解析中间件
 kkoa.use(bodyParser())
 let home = new Router()
@@ -23,6 +24,13 @@ kkoa.use(static(
 home.get('/', async (ctx) => {
   const content = fs.readFileSync('./src/dist/index.html', 'utf-8')
   ctx.body = content
+})
+
+// 一键下载shell
+home.get('/download', async (ctx) => {
+  // 要下载的那个文件
+  ctx.attachment('./config.json');
+  await send(ctx, './config.json', { root: __dirname + '/' });
 })
 
 // 获取已经保存过的配置文件的信息
@@ -91,6 +99,8 @@ kkoa.use(cors());
 // 加载路由中间件
 kkoa.use(home.routes()).use(home.allowedMethods())
 
-kkoa.listen(9098, () => {
-  console.log('i am 9098')
+const port = 3000
+
+kkoa.listen(port, () => {
+  console.log('i am', port)
 });

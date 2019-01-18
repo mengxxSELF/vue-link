@@ -2,6 +2,8 @@
   <div class="main">
     <h4> 一键链接服务器 </h4>
     <el-button type="text" @click="showModal" v-on:hideForm="hideModal">增加配置</el-button>
+    <div></div>
+    <el-button type="text" @click="shell">生成shell脚本</el-button>
     <Form v-if="isShow" v-on:hideForm="hideModal" ></Form>
     <Table v-bind:tableData="tableData" v-on:edit="editServer" ></Table>
   </div>
@@ -27,8 +29,8 @@ export default {
   },
   mounted() {
     // 请求数据
-    axios.get('/list').then(({ data }) => {
-    // axios.get('http://127.0.0.1:3000/list').then(({ data }) => {
+    // axios.get('/list').then(({ data }) => {
+    axios.get('http://127.0.0.1:3000/list').then(({ data }) => {
       const { result } = data;
       this.tableData = result;
       // 将数据保存在本地
@@ -37,6 +39,10 @@ export default {
     });
   },
   methods: {
+    shell() {
+      // 根据table生成shell脚本
+
+    },
     editServer({ id, title, type, address }) {
       const info = { title, type, address };
       console.log(info);

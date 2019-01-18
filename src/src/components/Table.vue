@@ -73,8 +73,8 @@ export default {
         // 链接服务器
         axios({
           method: 'post',
-          url: '/link',
-          // url: 'http://127.0.0.1:3000/link',
+          // url: '/link',
+          url: 'http://127.0.0.1:3000/link',
           data: {
             address,
             type,

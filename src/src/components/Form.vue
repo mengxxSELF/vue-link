@@ -84,8 +84,8 @@ export default {
       // 提交表单信息
       axios({
         method: 'post',
-        url: '/address',
-        // url: 'http://127.0.0.1:3000/address',
+        // url: '/address',
+        url: 'http://127.0.0.1:3000/address',
         data: {
           address,
           type,
